@@ -22,6 +22,11 @@ spring:
 
             # Alerts & Diagnostics Service - Event-driven right now
 
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health,info,gateway
 
 eureka:
   client:
