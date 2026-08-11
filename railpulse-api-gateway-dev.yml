@@ -18,13 +18,10 @@ spring:
                 - Path=/api/v1/telemetry/**
 
 management:
-  endpoint:
-    gateway:
-      access: read-only
   endpoints:
     web:
       exposure:
-        include: health,info,gateway
+        include: health,info,mappings
 
 eureka:
   client:
