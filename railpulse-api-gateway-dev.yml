@@ -8,20 +8,14 @@ spring:
         webmvc:
           routes:
             - id: fleet-service
-              uri: http://localhost:8082
+              uri: lb://railpulse-fleet-service
               predicates:
                 - Path=/api/v1/locomotives/**
 
             - id: telemetry-service
-              uri: http://localhost:8083
+              uri: lb://railpulse-telemetry-service
               predicates:
                 - Path=/api/v1/telemetry/**
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
 
 eureka:
   client:
