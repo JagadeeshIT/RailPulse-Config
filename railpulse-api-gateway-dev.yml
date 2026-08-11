@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+
+            # Fleet Service
+            - id: fleet-service
+              uri: lb://railpulse-fleet-service
+              predicates:
+                - Path=/api/v1/locomotives/**
+
+            # Telemetry Service
+            - id: telemetry-service
+              uri: lb://railpulse-telemetry-service
+              predicates:
+                - Path=/api/v1/telemetry/**
+
+            # Alerts & Diagnostics Service - Event-driven right now
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
