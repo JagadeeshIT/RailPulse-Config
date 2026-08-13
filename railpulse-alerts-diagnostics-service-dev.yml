@@ -29,6 +29,11 @@ spring:
         spring.json.value.default.type: com.railpulse.alertsDiagnostics.dto.request.TelemetryRequestDto
         spring.json.use.type.headers: false
 
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
 eureka:
   client:
     service-url:
