@@ -43,6 +43,13 @@ resilience4j:
         retry-exceptions: 
           - feign.RetryableException
 
+logging:
+  level:
+    org.springframework.cloud.openfeign: DEBUG
+    org.springframework.cloud.circuitbreaker: DEBUG
+    io.github.resilience4j.retry: DEBUG
+
+
 eureka:
   client:
     service-url:
