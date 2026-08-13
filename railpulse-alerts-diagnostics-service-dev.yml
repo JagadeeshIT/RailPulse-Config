@@ -40,8 +40,8 @@ resilience4j:
       fleetService:
         max-attempts: 3
         wait-duration: 500ms
-        retry-exceptions: 
-          - feign.RetryableException
+        retry-exceptions:
+          - org.springframework.cloud.client.circuitbreaker.NoFallbackAvailableException
 
 logging:
   level:
